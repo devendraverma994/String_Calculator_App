@@ -3,4 +3,16 @@ class StringCalculatorsController < ApplicationController
     @result = params[:result]
     @error = params[:error]
   end
+
+  def create
+    calculator = StringCalculator.new
+    @result = calculator.add(calculator_params[:numbers])
+    redirect_to new_string_calculator_path(result: @result)
+  end
+
+  private
+
+  def calculator_params
+    params.require(:calculator).permit(:numbers)
+  end
 end
