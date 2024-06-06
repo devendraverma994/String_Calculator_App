@@ -8,6 +8,13 @@ RSpec.describe StringCalculator, type: :model do
         expect(calculator.add("")).to eq(0)
       end
     end
+
+    context "with positive numbers" do
+      it "returns the sum of the numbers" do
+        calculator = StringCalculator.new
+        expect(calculator.add("1,2,3")).to eq(6)
+      end
+    end
   end
 end
 
