@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Clone Project Repository from Github url:- 
+  - https://github.com/devendraverma994/String_Calculator_App.git
 
-Things you may want to cover:
+- bundle install
 
 * Ruby version
+  - ruby "3.0.0"
 
-* System dependencies
-
-* Configuration
+* Rails version
+  - rails "7.1.3.3"
 
 * Database creation
+  - rails db:create
 
-* Database initialization
+* For successfully Migrate all the pending migrations
+  - rails db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* To run all the test cases
+  - bundle exec rspec spec
