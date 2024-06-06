@@ -8,6 +8,8 @@ class StringCalculatorsController < ApplicationController
     calculator = StringCalculator.new
     @result = calculator.add(calculator_params[:numbers])
     redirect_to new_string_calculator_path(result: @result)
+  rescue => e
+    redirect_to new_string_calculator_path(error: e.message)
   end
 
   private
