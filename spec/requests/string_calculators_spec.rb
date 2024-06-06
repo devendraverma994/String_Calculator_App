@@ -21,5 +21,12 @@ RSpec.describe "StringCalculators", type: :request do
         expect(response).to redirect_to(new_string_calculator_path(result: 6))
       end
     end
+
+    context "with invalid input" do
+      it "redirects to new_string_calculator_path with error message" do
+        post string_calculators_path, params: { calculator: { numbers: "1,-2,3" } }
+        expect(response).to redirect_to(new_string_calculator_path(error: "Negative numbers not allowed: -2"))
+      end
+    end
   end
 end
